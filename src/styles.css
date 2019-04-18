@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://gwynder.net.pl/resources/bootstrap/bootstrap.min.css";
+@import "https://gwynder.net.pl/resources/fontawesome/css/font-awesome.min.css";
+@import "https://gwynder.net.pl/resources/central/style.css";
+
+.top-margin {
+    margin-top: 16px;
+}
