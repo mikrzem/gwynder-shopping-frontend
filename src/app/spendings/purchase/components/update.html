@@ -1,0 +1,15 @@
+<h1>Update purchase</h1>
+<div class="alert alert-success"
+     *ngIf="success">
+    Save successful
+</div>
+<div class="row form-group"
+     *ngIf="(request | async) as purchase; else loading">
+    <purchase-edit [purchase]="purchase"></purchase-edit>
+</div>
+<ng-template #loading>
+    <div class="alert alert-info">
+        <span class="fa fa-spinner fa-spin"></span>
+        Loading...
+    </div>
+</ng-template>

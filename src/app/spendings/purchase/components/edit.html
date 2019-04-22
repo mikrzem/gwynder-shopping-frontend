@@ -1,0 +1,24 @@
+<div class="card"
+     *ngIf="purchase">
+    <div class="card-header">
+        <h4 class="card-title">Purchase</h4>
+    </div>
+    <div class="card-body">
+        <div class="row form-group">
+            <label class="col-md-4">
+                Date
+            </label>
+            <div class="col-md-8">
+                <date-select [(value)]="purchase.date"></date-select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-md-4">
+                Location
+            </label>
+            <div class="col-md-8">
+                
+            </div>
+        </div>
+    </div>
+</div>

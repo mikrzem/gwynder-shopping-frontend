@@ -1,0 +1,15 @@
+<div class="row form-group">
+    <div class="col-md-12">
+        <a class="btn btn-block btn-success"
+           [routerLink]="['purchase', 'create']">
+            <span class="fa fa-plus-square-o"></span>
+            Add new purchase
+        </a>
+    </div>
+</div>
+<div class="row form-group"
+     *ngFor="let purchase of current">
+    <div class="col-md-12">
+        <purchase-display [purchase]="purchase"></purchase-display>
+    </div>
+</div>

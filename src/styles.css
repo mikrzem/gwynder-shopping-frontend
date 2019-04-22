@@ -6,3 +6,11 @@
 .top-margin {
     margin-top: 16px;
 }
+
+.extra-table-row {
+    font-style: italic;
+}
+
+.sum-table-row {
+    font-weight: bold;
+}
