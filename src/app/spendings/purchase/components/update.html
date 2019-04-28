@@ -5,7 +5,9 @@
 </div>
 <div class="row form-group"
      *ngIf="(request | async) as purchase; else loading">
-    <purchase-edit [purchase]="purchase"></purchase-edit>
+    <div class="col-md-12">
+        <purchase-edit [purchase]="purchase"></purchase-edit>
+    </div>
 </div>
 <ng-template #loading>
     <div class="alert alert-info">

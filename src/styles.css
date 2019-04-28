@@ -2,6 +2,9 @@
 @import "https://gwynder.net.pl/resources/bootstrap/bootstrap.min.css";
 @import "https://gwynder.net.pl/resources/fontawesome/css/font-awesome.min.css";
 @import "https://gwynder.net.pl/resources/central/style.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/themes/nova-dark/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
 
 .top-margin {
     margin-top: 16px;

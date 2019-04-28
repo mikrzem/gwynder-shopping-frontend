@@ -1,16 +1,17 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {SpendingLocation} from '../services/data';
-import {SpendingLocationService} from '../services/service';
+import {SpendingCategory} from '../services/data';
+import {SpendingCategoryService} from '../services/service';
 
 @Component({
-    selector: 'location-create',
+    selector: 'category-create',
     templateUrl: 'create.html'
 })
-export class LocationCreate {
+export class CategoryCreate {
 
-    @Output() public closed = new EventEmitter<SpendingLocation>();
+    @Output() public closed = new EventEmitter<SpendingCategory>();
 
-    public location: SpendingLocation = {
+    public category: SpendingCategory = {
+        parent: null,
         name: null
     };
 
@@ -19,24 +20,25 @@ export class LocationCreate {
     public error: string = null;
 
     constructor(
-        private readonly service: SpendingLocationService
+        private readonly service: SpendingCategoryService
     ) { }
 
     public async save() {
-        if (!this.location.name) {
+        if (!this.category.name) {
             this.error = 'Name is required';
             return;
         }
         this.error = null;
         this.saving = true;
         try {
-            const saved = await this.service.save(this.location);
-            this.location = {
+            const saved = await this.service.save(this.category);
+            this.category = {
+                parent: null,
                 name: null
             };
             this.closed.emit(saved);
         } catch (ex) {
-            this.error = 'Failed to create this location';
+            this.error = 'Failed to create this category';
         }
         this.saving = false;
     }

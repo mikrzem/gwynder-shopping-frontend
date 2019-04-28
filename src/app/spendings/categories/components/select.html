@@ -1,14 +1,15 @@
 <div class="row"
      *ngIf="!editMode">
-    <div class="col-md-10"
-         *ngIf="(request | async) as locations; else loading">
+    <div [class.col-md-10]="allowEdit"
+         [class.col-md-12]="!allowEdit"
+         *ngIf="(request | async) as categories; else loading">
         <select class="form-control"
                 [(ngModel)]="current"
-                [compareWith]="compareLocation">
-            <option [ngValue]="null">-- Choose location --</option>
-            <option *ngFor="let available of locations"
+                [compareWith]="compareCategory">
+            <option [ngValue]="null">-- Choose category --</option>
+            <option *ngFor="let available of categories"
                     [ngValue]="available">
-                {{available.name}}
+                {{display(available)}}
             </option>
         </select>
     </div>
@@ -19,7 +20,8 @@
             </div>
         </div>
     </ng-template>
-    <div class="col-md-2">
+    <div class="col-md-2"
+         *ngIf="allowEdit">
         <button type="button"
                 class="btn btn-success btn-block"
                 (click)="editMode = true">
@@ -29,5 +31,5 @@
     </div>
 </div>
 <div *ngIf="editMode">
-    <location-create (closed)="closeEdit($event)"></location-create>
+    <category-create (closed)="closeEdit($event)"></category-create>
 </div>

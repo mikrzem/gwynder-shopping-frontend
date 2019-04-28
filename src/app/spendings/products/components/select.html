@@ -1,0 +1,42 @@
+<div *ngIf="!editMode">
+    <div class="row">
+        <div class="col-md-12">
+            <category-select [(category)]="category"></category-select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10"
+             *ngIf="(request | async) as categories; else loading">
+            <select class="form-control"
+                    [(ngModel)]="current"
+                    [compareWith]="compareCategory"
+                    [disabled]="!category">
+                <option [ngValue]="null">-- Choose product --</option>
+                <option *ngFor="let available of categories"
+                        [ngValue]="available">
+                    {{available.name}}
+                </option>
+            </select>
+        </div>
+        <ng-template #loading>
+            <div class="col-md-10">
+                <div class="alert alert-info">
+                    Loading...
+                </div>
+            </div>
+        </ng-template>
+        <div class="col-md-2">
+            <button type="button"
+                    class="btn btn-success btn-block"
+                    (click)="editMode = true">
+                <span class="fa fa-plus-square-o"></span>
+                Add
+            </button>
+        </div>
+    </div>
+</div>
+<div *ngIf="editMode">
+    <product-create [parentCategory]="category"
+                    (closed)="closeEdit($event)">
+    </product-create>
+</div>

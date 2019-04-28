@@ -41,8 +41,13 @@ export class LocationSelect implements OnInit {
         this.loadList();
     }
 
+    public closeEdit(location: SpendingLocation) {
+        this.current = location;
+        this.editMode = false;
+        this.loadList();
+    }
+
     private loadList() {
         this.request = this.service.selectAll();
     }
-
 }
