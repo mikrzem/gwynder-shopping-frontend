@@ -1,0 +1,17 @@
+<h1>Update income entry</h1>
+<div class="alert alert-success"
+     *ngIf="success">
+    Save successful
+</div>
+<div class="row form-group"
+     *ngIf="(request | async) as income; else loading">
+    <div class="col-md-12">
+        <income-edit [income]="income"></income-edit>
+    </div>
+</div>
+<ng-template #loading>
+    <div class="alert alert-info">
+        <span class="fa fa-spinner fa-spin"></span>
+        Loading...
+    </div>
+</ng-template>

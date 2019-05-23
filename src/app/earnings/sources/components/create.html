@@ -1,0 +1,39 @@
+<div class="alert alert-info"
+     *ngIf="saving">
+    <span class="fa fa-spin fa-spinner"></span>
+    Saving...
+</div>
+<div class="alert alert-danger"
+     *ngIf="error">
+    {{error}}
+</div>
+<div *ngIf="!saving">
+    <form (submit)="save()">
+        <div class="row form-group">
+            <div class="col-md-12">
+                <input type="text"
+                       class="form-control"
+                       [(ngModel)]="incomeSource.name"
+                       required="required"
+                       name="name"
+                       placeholder="Income source"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <button type="submit"
+                        class="btn btn-primary btn-block">
+                    <span class="fa fa-save"></span>
+                    Save
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button"
+                        class="btn btn-block btn-secondary"
+                        (click)="cancel()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

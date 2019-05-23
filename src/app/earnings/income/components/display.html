@@ -1,0 +1,36 @@
+<div class="card"
+     *ngIf="income">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-md-4">
+                <a class="btn btn-block btn-primary"
+                   [routerLink]="['/income', 'update', income.id]">
+                    <span class="fa fa-edit"></span>
+                    Edit
+                </a>
+            </div>
+            <div class="col-md-8">
+                {{income.date}}
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row form-group"
+             *ngIf="income.source">
+            <label class="col-md-4">
+                Source
+            </label>
+            <div class="col-md-8">
+                {{income.source.name}}
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-md-4">
+                Amount
+            </label>
+            <div class="col-md-8">
+                {{income.income.toFixed(2)}}
+            </div>
+        </div>
+    </div>
+</div>

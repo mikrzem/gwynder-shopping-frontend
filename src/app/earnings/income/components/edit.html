@@ -1,0 +1,56 @@
+<div class="card"
+     *ngIf="income">
+    <div class="card-header">
+        <h4 class="card-title">Income entry</h4>
+    </div>
+    <div class="card-body">
+        <div class="row form-group">
+            <label class="col-md-4">
+                Date
+            </label>
+            <div class="col-md-8">
+                <date-select [(value)]="income.date"></date-select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-md-4">
+                Source
+            </label>
+            <div class="col-md-8">
+                <income-source-select [(source)]="income.source"></income-source-select>
+            </div>
+        </div>
+        <div class="row form-group">
+            <label class="col-md-4">
+                Amount
+            </label>
+            <div class="col-md-8">
+                <input type="number"
+                       class="form-control"
+                       [(ngModel)]="income.income"
+                       placeholder="Amount"
+                       name="income"
+                       required="required"/>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-md-8">
+                <button type="button"
+                        class="btn btn-block btn-primary"
+                        (click)="save()">
+                    <span class="fa fa-save"></span>
+                    Save income entry
+                </button>
+            </div>
+            <div class="col-md-4">
+                <button type="button"
+                        class="btn btn-block btn-secondary"
+                        (click)="cancel()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

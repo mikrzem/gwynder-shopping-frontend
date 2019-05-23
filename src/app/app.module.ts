@@ -9,6 +9,16 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {DateSelect} from './common/components/date.select';
 import {UrlService} from './common/services/url';
+import {IncomeCreate} from './earnings/income/components/create';
+import {IncomeDisplay} from './earnings/income/components/display';
+import {IncomeEdit} from './earnings/income/components/edit';
+import {IncomeLatestList} from './earnings/income/components/latest.list';
+import {IncomeList} from './earnings/income/components/list';
+import {IncomeUpdate} from './earnings/income/components/update';
+import {IncomeService} from './earnings/income/services/service';
+import {IncomeSourceCreate} from './earnings/sources/components/create';
+import {IncomeSourceSelect} from './earnings/sources/components/select';
+import {IncomeSourceService} from './earnings/sources/services/service';
 import {Error404Page} from './main/error.404';
 import {StartPage} from './main/start.page';
 import {CategoryCreate} from './spendings/categories/components/create';
@@ -46,6 +56,14 @@ import {PurchaseService} from './spendings/purchase/services/service';
         CategoryCreate,
         ProductSelect,
         ProductCreate,
+        IncomeSourceCreate,
+        IncomeSourceSelect,
+        IncomeDisplay,
+        IncomeList,
+        IncomeLatestList,
+        IncomeEdit,
+        IncomeCreate,
+        IncomeUpdate,
     ],
     imports: [
         BrowserModule,
@@ -62,6 +80,8 @@ import {PurchaseService} from './spendings/purchase/services/service';
         SpendingLocationService,
         ProductService,
         PurchaseService,
+        IncomeSourceService,
+        IncomeService,
     ],
     bootstrap: [AppComponent]
 })
