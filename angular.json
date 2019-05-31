@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "gwynder-notes-frontend": {
+    "gwynder-shopping-frontend": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/gwynder-notes-frontend",
+            "outputPath": "dist/gwynder-shopping-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -60,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "gwynder-notes-frontend:build"
+            "browserTarget": "gwynder-shopping-frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "gwynder-notes-frontend:build:production"
+              "browserTarget": "gwynder-shopping-frontend:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gwynder-notes-frontend:build"
+            "browserTarget": "gwynder-shopping-frontend:build"
           }
         },
         "lint": {
@@ -89,5 +89,5 @@
       }
     }
   },
-  "defaultProject": "gwynder-notes-frontend"
+  "defaultProject": "gwynder-shopping-frontend"
 }
